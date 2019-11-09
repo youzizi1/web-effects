@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 三角形 */
+      .top-triangle {
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        border-color: transparent transparent red transparent;
+      }
+      .bottom-triangle {
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        border-color: red transparent transparent transparent;
+      }
+      .left-triangle {
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        border-color: transparent red transparent transparent;
+      }
+      .right-triangle {
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        border-color: transparent transparent transparent red;
+      }
+      /* 前进后退 */
+      .operation-next {
+        position: relative;
+        width: 50px;
+        height: 100px;
+        background-color: #ccc;
+      }
+      .operation-next:after {
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: -18px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid red;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-135deg);
+      }
+      .operation-prev {
+        position: relative;
+        width: 50px;
+        height: 100px;
+        background-color: #ccc;
+      }
+      .operation-prev:after {
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid red;
+        border-top: none;
+        border-right: none;
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <!-- 三角形 -->
+      <div class="app-triangle">
+        <div class="top-triangle"></div>
+        <div class="right-triangle"></div>
+        <div class="bottom-triangle"></div>
+        <div class="left-triangle"></div>
+      </div>
+      <!-- 前进后退 -->
+      <div class="app-operation">
+        <div class="operation-next"></div>
+        <div class="operation-prev"></div>
+      </div>
+    </div>
+  </body>
+</html>
