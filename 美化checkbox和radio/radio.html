@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* radio美化 */
+      .app-radio {
+        position: relative;
+      }
+
+      .app-radio input {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .app-radio .mock-radio {
+        display: inline-block;
+        position: relative;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        vertical-align: -2px;
+        border: 1px solid #979797;
+        transition: background-color ease-out 0.3s;
+      }
+
+      .app-radio input:checked + .mock-radio {
+        background-color: #00b066;
+        border: 1px solid #00b066;
+      }
+      .app-radio input:checked + .mock-radio:after {
+        content: "";
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        top: 3px;
+        left: 3px;
+        background-color: #fff;
+      }
+      /* checkbox美化 */
+      .app-checkbox {
+        position: relative;
+      }
+
+      .app-checkbox input {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .app-checkbox .mock-checkbox {
+        display: inline-block;
+        position: relative;
+        width: 13px;
+        height: 13px;
+        vertical-align: -2px;
+        border: 1px solid #979797;
+        transition: background-color ease-out 0.3s;
+      }
+
+      .app-checkbox input:checked + .mock-checkbox {
+        background-color: #00b066;
+        border: 1px solid #00b066;
+      }
+      .app-checkbox input:checked + .mock-checkbox:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 80%;
+        height: 40%;
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+      }
+      /* switch */
+      .app-switch {
+        position: relative;
+      }
+
+      .app-switch input {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .app-switch .mock-switch {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border: 1px solid #dfdfdf;
+        background-color: #fdfdfd;
+        box-shadow: #dfdfdf 0 0 0 0 inset;
+        border-radius: 20px;
+        transition: border-color 0.4s, background-color ease 0.4s;
+      }
+
+      .app-switch .mock-switch:after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 23px;
+        height: 23px;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        transition: left 0.3s;
+      }
+      
+      .app-switch input:checked + .mock-switch {
+        border-color: #64bd63;
+        background-color: #64bd63;
+      }
+
+      .app-switch input:checked + .mock-switch:after {
+        left: 27px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-radio">
+        <label for="man">
+          <input type="radio" id="man" name="sex" checked />
+          <i class="mock-radio"></i>
+          男
+        </label>
+        <label for="woman">
+          <input type="radio" id="woman" name="sex" />
+          <i class="mock-radio"></i>
+          女
+        </label>
+      </div>
+      <!-- checkbox -->
+      <div class="app-checkbox">
+        <label for="study">
+          <input type="checkbox" id="study" name="hobby" />
+          <i class="mock-checkbox"></i>
+          学习
+        </label>
+        <label for="sleep">
+          <input type="checkbox" id="sleep" name="hobby" />
+          <i class="mock-checkbox"></i>
+          睡觉
+        </label>
+        <label for="read">
+          <input type="checkbox" id="read" name="hobby" />
+          <i class="mock-checkbox"></i>
+          读书
+        </label>
+      </div>
+      <!-- checkbox mock swicth -->
+      <div class="app-switch">
+        <label for="swicth">
+          <input type="checkbox" id="swicth" name="swicth" />
+          <i class="mock-switch"></i>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
