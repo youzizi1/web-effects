@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body,
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+
+      .app {
+        position: relative;
+        background-color: #ccc;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid #000;
+      }
+
+      .box > span {
+        padding: 10px 30px;
+      }
+
+      .box-title {
+        background-color: #fe8761;
+        cursor: move;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="box">
+        <span class="box-title">按下我进行拖动</span>
+        <span class="box-content">内容</span>
+      </div>
+    </div>
+    <script>
+      const boxTitle = document.querySelector(".box-title");
+      const box = document.querySelector(".box");
+
+      let offsetPosX = 0;
+      let offsetPosY = 0;
+
+      let posX = 0;
+      let posY = 0;
+
+      boxTitle.addEventListener("mousedown", handleMouseDown);
+
+      function handleMouseDown(e) {
+        const ev = e || window.event;
+        ev.preventDefault();
+
+        posX = ev.clientX;
+        posY = ev.clientY;
+
+        document.addEventListener("mouseup", handleMouseUp);
+        document.addEventListener("mousemove", handleMouseMove);
+      }
+
+      function handleMouseUp() {
+        document.removeEventListener("mouseup", handleMouseUp);
+        document.removeEventListener("mousemove", handleMouseMove);
+      }
+
+      function handleMouseMove(e) {
+        const ev = e || window.event;
+        ev.preventDefault();
+
+        offsetPosX = posX - ev.clientX;
+        offsetPosY = posY - ev.clientY;
+
+        posX = ev.clientX;
+        posY = ev.clientY;
+
+        box.style.top = box.offsetTop - offsetPosY + "px";
+        box.style.left = box.offsetLeft - offsetPosX + "px";
+      }
+    </script>
+  </body>
+</html>
