@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body,
+      .box {
+        width: 100%;
+      }
+
+      .box {
+        position: relative;
+        display: flex;
+        margin: 50px auto 0;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .right,
+      .left {
+        position: relative;
+        width: 100px;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .right-circle,
+      .left-circle {
+        position: absolute;
+        top: 0;
+        width: 160px;
+        height: 160px;
+        border: 20px solid transparent;
+        border-radius: 50%;
+      }
+
+      .left-circle {
+        left: 0;
+        border-top: 20px solid green;
+        border-left: 20px solid green;
+        transform: rotate(-45deg);
+      }
+
+      .right-circle {
+        right: 0;
+        border-top: 20px solid green;
+        border-right: 20px solid green;
+        transform: rotate(45deg);
+      }
+
+      .right-circle-rotate {
+        animation: right-circle-animate 5s linear forwards;
+      }
+
+      .left-circle-rotate {
+        animation: left-circle-animate 5s linear 5s forwards;
+      }
+
+      @keyframes right-circle-animate {
+        0% {
+          transform: rotate(45deg);
+        }
+
+        100% {
+          transform: rotate(-135deg);
+        }
+      }
+
+      @keyframes left-circle-animate {
+        0% {
+          transform: rotate(-45deg);
+        }
+
+        100% {
+          transform: rotate(-225deg);
+        }
+      }
+
+      .start {
+        display: block;
+        width: 60px;
+        height: 30px;
+        margin: 100px auto 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="left">
+        <div class="left-circle"></div>
+      </div>
+      <div class="right">
+        <div class="right-circle"></div>
+      </div>
+    </div>
+    <button class="start">倒计时</button>
+
+    <script>
+      const startDom = document.querySelector('.start')
+      const rightCircleDom = document.querySelector('.right-circle')
+      const leftCircleDom = document.querySelector('.left-circle')
+      startDom.addEventListener('click', () => {
+        rightCircleDom.classList.add('right-circle-rotate')
+        leftCircleDom.classList.add('left-circle-rotate')
+      })
+    </script>
+  </body>
+</html>
