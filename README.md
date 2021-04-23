@@ -7,3 +7,7 @@ Use Web Design Effects to Enhance Your Website.
 * [CSS实现圆形进度条](https://youzizi1.github.io/web-effects/index.html)
 * [CSS实现边框内圆角](https://youzizi1.github.io/web-effects/index.html)
 * [CSS实现多重边框](https://youzizi1.github.io/web-effects/index.html)
+* [CSS实现条纹背景](https://youzizi1.github.io/web-effects/index.html)
+* [CSS实现1px边框](https://youzizi1.github.io/web-effects/index.html)
+* [CSS实现优惠券](https://youzizi1.github.io/web-effects/index.html)
+
