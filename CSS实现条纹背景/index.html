@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: relative;
+        width: 240px;
+        height: 12px;
+        margin: 100px auto 0;
+        border-radius: 8px;
+        background-color: rgba(180, 160, 120, 0.2);
+        overflow: hidden;
+      }
+
+      .box-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 100%;
+        border-radius: 8px;
+        background: repeating-linear-gradient(
+          -45deg,
+          #d9cfbb 25%,
+          #c3b393 0,
+          #c3b393 50%,
+          #d9cfbb 0,
+          #d9cfbb 75%,
+          #c3b393 0
+        );
+        background-size: 16px 16px;
+        animation: progress-animation 10s linear infinite;
+      }
+
+      @keyframes progress-animation {
+        to {
+          background-position: 200% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box-inner"></div>
+    </div>
+  </body>
+</html>
